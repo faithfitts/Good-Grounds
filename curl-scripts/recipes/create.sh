@@ -1,7 +1,7 @@
 #!/bin/bash
 
 API="http://localhost:4741"
-URL_PATH="/examples"
+URL_PATH="/recipes"
 
 curl "${API}${URL_PATH}" \
   --include \
@@ -9,9 +9,11 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --header "Authorization: Bearer ${TOKEN}" \
   --data '{
-    "example": {
-      "text": "'"${TEXT}"'",
-      "title": "'"${TITLE}"'"
+    "recipe": {
+      "title": "'"${TITLE}"'",
+      "description": "'"${DESCRIPTION}"'",
+      "method": "'"${METHOD}"'",
+      "ingredients": "'"${INGREDIENTS}"'"
     }
   }'
 
